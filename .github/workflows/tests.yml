@@ -1,0 +1,21 @@
+﻿name: PowerShell Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Run PowerShell tests
+      shell: pwsh
+      run: |
+        Set-Location ${{ github.workspace }}
+        # Add test commands here when tests are implemented
+        Write-Host "Tests would run here"
